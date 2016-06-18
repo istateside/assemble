@@ -7,7 +7,7 @@
 # dependencies
 /node_modules
 /bower_components
-/ember-cordova/cordova/platforms/ios/cordova/node_modules
+/ember-cordova
 
 # misc
 /.sass-cache
