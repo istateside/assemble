@@ -1,1 +1,6 @@
 {{outlet}}
+<ul>
+{{#each model as |user|}}
+  <li>{{user.username}} / {{if user.onCall 'on call' 'not on call'}}</li>
+{{/each}}
+</ul>
