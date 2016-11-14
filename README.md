@@ -1,6 +1,6 @@
 # Assemble
 
-This app is not really a thing yet, but eventually will be a mobile app backed by [Assemble API](https://github.com/lizbaillie/assemble-api)
+This app is not really a thing yet, but eventually will be a mobile app backed by [Assemble API](https://github.com/lizbaillie/assemble-api).
 
 ## Prerequisites
 
