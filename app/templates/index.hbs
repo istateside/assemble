@@ -1,8 +1,6 @@
-{{outlet}}
-<button type="button" {{action 'getUserLocation'}}>Geolocate me!</button>
-<ul>
-  <li>Current Location: {{if userLocation userLocation 'N/A'}}</li>
+Hello!
 {{#each model as |user|}}
-  <li>{{user.username}} / {{if user.onCall 'on call' 'not on call'}}</li>
+  {{user.userName}}<br>
+  {{user.profileText}}<br>
+  * * *
 {{/each}}
-</ul>
