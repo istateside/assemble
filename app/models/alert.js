@@ -1,7 +1,9 @@
 import DS from 'ember-data';
 
+const { belongsTo, attr } = DS;
+
 export default DS.Model.extend({
-  alertText: DS.attr('string'),
-  alertLocation: DS.attr('string'),
-  team: DS.belongsTo()
+  alertText: attr('string'),
+  alertLocation: attr('string'),
+  team: belongsTo()
 });
