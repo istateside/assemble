@@ -1,1 +1,6 @@
-{{outlet}}
+Hello!
+{{#each model as |user|}}
+  {{user.userName}}<br>
+  {{user.profileText}}<br>
+  * * *
+{{/each}}
