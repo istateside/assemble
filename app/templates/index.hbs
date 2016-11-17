@@ -1,6 +1,11 @@
-Hello!
-{{#each model as |user|}}
-  {{user.userName}}<br>
-  {{user.profileText}}<br>
-  * * *
-{{/each}}
+<p>
+  <button type="button" {{action "getCurrentUserLocation"}}>
+    Get Location
+  </button>
+</p>
+
+{{#if currentUserLocation}}
+  {{currentUserLocation}}
+{{else}}
+  :(
+{{/if}}
