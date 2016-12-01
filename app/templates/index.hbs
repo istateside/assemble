@@ -1,11 +1,18 @@
-<p>
-  <button type="button" {{action "getCurrentUserLocation"}}>
-    Get Location
-  </button>
-</p>
+{{#if session.isAuthenticated}}
+  <p>
+    <button type="button" {{action "getCurrentUserLocation"}}>
+      Send Alert
+    </button>
+  </p>
 
-{{#if currentUserLocation}}
-  {{currentUserLocation}}
+  {{#if currentUserLocation}}
+    {{log currentUserLocation}}
+  {{else}}
+    :(
+  {{/if}}
+  <a {{action 'logout'}}>Logout</a>
 {{else}}
-  :(
+  You ain't logged in, breaux
 {{/if}}
+
+{{#link-to 'login'}}Login{{/link-to}}
