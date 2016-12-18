@@ -25,9 +25,7 @@ export default Ember.Component.extend({
 
     signinButton() {
       window.auth2.grantOfflineAccess({'redirect_uri': 'postmessage', prompt: 'login'}).then((authResult) => {
-        debugger;
         if (authResult['code']) {
-
           // Hide the sign-in button now that the user is authorized, for example:
           $('#signinButton').attr('style', 'display: none');
 
@@ -38,12 +36,13 @@ export default Ember.Component.extend({
             contentType: 'application/octet-stream; charset=utf-8',
             success: function(result) {
               // Handle or verify the server response.
-              console.log("!!!");
+              alert("!!!");
             },
             processData: false,
             data: authResult['code']
           });
         } else {
+          alert('FROWN TOWN :(')
           // There was an error.
         }
       });
