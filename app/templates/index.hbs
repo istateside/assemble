@@ -9,3 +9,11 @@
 {{else}}
   :(
 {{/if}}
+
+{{#if session.isAuthenticated}}
+  Hello {{currentUser.email}}!
+  <a {{action 'invalidateSession'}}>Logout</a>
+{{else}}
+You should log in.
+  {{#link-to 'login'}}Login{{/link-to}}
+{{/if}}
