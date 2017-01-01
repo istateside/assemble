@@ -11,7 +11,7 @@
 {{/if}}
 
 {{#if session.isAuthenticated}}
-  Hello {{currentUser.email}}!
+  Hello {{session.currentUser.user.email}}!
   <a {{action 'invalidateSession'}}>Logout</a>
 {{else}}
 You should log in.
