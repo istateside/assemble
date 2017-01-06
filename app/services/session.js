@@ -7,8 +7,8 @@ export default Session.extend({
 
   currentUser: Ember.computed('isAuthenticated', function() {
     if (this.get('isAuthenticated')) {
-      const promise = Ember.$.getJSON("http://localhost:3000/users/me");
-      return DS.PromiseObject.create({ promise: promise })
+      const promise = this.get('store').queryRecord('user', { current_user: 'true' });
+      return DS.PromiseObject.create({ promise: promise });
     }
   })
 
