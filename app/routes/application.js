@@ -5,16 +5,16 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   session: Ember.inject.service(),
 
   beforeModel() {
-    return this._loadCurrentUser();
+    return this._loadCurrentUserData();
   },
 
   sessionAuthenticated() {
-    this._loadCurrentUser().then(() => {
+    this._loadCurrentUserData().then(() => {
       this.transitionTo('/');
     }).catch(() => this.get('session').invalidate());
   },
 
-  _loadCurrentUser() {
-    this.get('session').loadCurrentUser();
+  _loadCurrentUserData() {
+    this.get('session').loadCurrentUserData();
   }
 });

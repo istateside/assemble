@@ -12,6 +12,10 @@
 
 {{#if session.isAuthenticated}}
   Hello {{currentUser.username}}!
+  Your teams are:<br>
+  {{#each teams as |team|}}
+    * {{team.teamName}}<br>
+  {{/each}}
   <a {{action 'invalidateSession'}}>Logout</a>
 {{else}}
 You should log in.
