@@ -1,8 +1,16 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
+const { service } = Ember.inject;
+
+/**
+  @class route:index
+  @extends Ember.Route
+  @type Ember.Route
+ */
+
 export default Ember.Route.extend(ApplicationRouteMixin, {
-  geolocation: Ember.inject.service(),
+  geolocation: service(),
 
   actions: {
     getCurrentUserLocation() {
