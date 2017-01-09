@@ -5,14 +5,33 @@ const { attr, hasMany } = DS;
 /**
   @class model:user
   @extends DS.Model
-  @type DS.Model
  */
 
 export default DS.Model.extend({
-  // Properties
+  // Attributes
 
+  /**
+    User's email address.
+
+    @attribute email
+    @type String
+   */
   email: attr('string'),
+
+  /**
+    User's username.
+
+    @attribute username
+    @type String
+   */
   username: attr('string'),
+
+  /**
+    The text of a user's profile.
+
+    @attribute profileText
+    @type String
+   */
   profileText: attr('string'),
 
   // Relationships

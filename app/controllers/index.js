@@ -7,23 +7,50 @@ const { alias } = computed;
 /**
   @class controller:index
   @extends Ember.Controller
-  @type Ember.Controller
  */
 
 export default Ember.Controller.extend({
+  /**
+    An alias for the session service.
+
+    @property session
+    @type Service
+   */
   session: service('session'),
+
+  /**
+    An alias for the session's current user
+
+    @property currentUser
+    @type Object
+   */
   currentUser: alias('session.currentUser'),
+
+  /**
+    An alias for the session's current user's teams
+
+    @property teams
+    @type Object
+   */
   teams: alias('session.currentUserTeams'),
 
+  /**
+    This attribute describes the latitude and longitude of the current user, when
+    populated by the `getCurrentUserLocation` action on the index route..
+
+    @attribute currentUserLocation
+    @type String
+    @default null
+   */
   currentUserLocation: null,
 
   actions: {
-    
+
     /**
       Logs out the current user.
 
       @private
-      @method invalidateSession
+      @event invalidateSession
     */
     invalidateSession() {
       this.get('session').invalidate();

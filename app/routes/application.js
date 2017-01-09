@@ -6,10 +6,17 @@ const { service } = Ember.inject;
 /**
   @class route:application
   @extends Ember.Route
-  @type Ember.Route
+  @uses ApplicationRouteMixin
  */
 
-export default Ember.Route.extend(ApplicationRouteMixin, {
+export default Ember.Route.extend(ApplicationRouteMixin,
+
+  /**
+    An alias for the session service.
+
+    @property session
+    @type Service
+   */
   session: service(),
 
   /**

@@ -5,10 +5,16 @@ const { service } = Ember.inject;
 /**
   @class controller:login
   @extends Ember.Controller
-  @type Ember.Controller
  */
 
 export default Ember.Controller.extend({
+
+  /**
+    An alias for the session service.
+
+    @property session
+    @type Service
+   */
   session: service('session'),
 
   actions: {
@@ -16,7 +22,7 @@ export default Ember.Controller.extend({
       Logs in the current user using Ember Simple Auth's Devise authenticator.
 
       @private
-      @method authenticate
+      @event authenticate
     */
     authenticate() {
       let { identification, password } = this.getProperties('identification', 'password');
