@@ -4,7 +4,7 @@ import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-
 /**
   @class route:login
   @extends Ember.Route
-  @cuses UnauthenticatedRouteMixin
+  @uses UnauthenticatedRouteMixin
  */
 
 export default Ember.Route.extend(UnauthenticatedRouteMixin, {
