@@ -1,10 +1,12 @@
 <form {{action 'signup' on='submit'}}>
+  <label for='username'>Username</label>
+  {{input id='username' placeholder='Username' value=model.username}}<br>
   <label for="identification">Email</label>
-  {{input id='email' placeholder='Enter Login' value=email}}<br>
+  {{input id='email' placeholder='Enter Login' value=model.email}}<br>
   <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}<br>
+  {{input id='password' placeholder='Enter Password' type='password' value=model.password}}<br>
   <label for="confirmPassword">Confirm Password</label>
-  {{input id='confirmPassword' placeholder='Confirm Password' type='password' value=confirmPassword}}<br>
+  {{input id='confirmPassword' placeholder='Confirm Password' type='password' value=model.confirmPassword}}<br>
   <button type="submit">Signup</button>
   {{#if errorMessage}}
     <p>{{errorMessage}}</p>

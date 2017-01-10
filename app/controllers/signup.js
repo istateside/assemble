@@ -47,16 +47,19 @@ export default Ember.Controller.extend({
       @event signup
      */
     signup() {
-      if (this._canSignUp()) {
-        let user = this.get('store').createRecord('user', {
-          email: this.get('email'),
-          password: this.get('password')
-        });
-        user.save();
-        this.get('session').authenticate('authenticator:devise', this.get('email'), this.get('password')).catch((reason) => {
-          this.set('errorMessage', reason.error || reason);
-        }).then(() => this.transitionToRoute('/'));
-      }
+      let user = this.get('model');
+      
+      user.save().catch((error) => {
+        this.set('errorMessage', error);
+      }).then(() => {
+        this.get('session')
+        .authenticate('authenticator:devise',
+          user.get('email'), user.get('password'))
+          .catch((reason) => {
+            this.set('errorMessage', reason.error || reason)
+          });
+      })
+
     }
   }
 });
