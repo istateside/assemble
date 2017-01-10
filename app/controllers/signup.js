@@ -10,12 +10,19 @@ const { service } = Ember.inject;
 export default Ember.Controller.extend({
 
   /**
-    An alias for the session service.
+    An alias for the session service/dependency injection.
 
     @property session
     @type Service
    */
   session: service(),
+
+  /**
+    An alias for the Ember Data store/dependency injection.
+
+    @property store
+    @type Service
+   */
   store: service(),
 
   /**
