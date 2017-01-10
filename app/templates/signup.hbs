@@ -1,0 +1,12 @@
+<form {{action 'signup' on='submit'}}>
+  <label for="identification">Email</label>
+  {{input id='email' placeholder='Enter Login' value=email}}<br>
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}<br>
+  <label for="confirmPassword">Confirm Password</label>
+  {{input id='confirmPassword' placeholder='Confirm Password' type='password' value=confirmPassword}}<br>
+  <button type="submit">Signup</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>

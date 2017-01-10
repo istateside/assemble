@@ -18,6 +18,7 @@
   {{/each}}
   <a {{action 'invalidateSession'}}>Logout</a>
 {{else}}
-You should log in.
-  {{#link-to 'login'}}Login{{/link-to}}
+You should log in.<br>
+  {{#link-to 'login'}}Login{{/link-to}}<br>
+{{#link-to 'signup'}}Sign up?{{/link-to}}
 {{/if}}
