@@ -1,5 +1,5 @@
-import DS from 'ember-data';
 import Session from "ember-simple-auth/services/session";
+import Ember from 'ember';
 
 const { service } = Ember.inject;
 
@@ -36,7 +36,6 @@ export default Session.extend({
           return this.get('store').query('team', { user_id: this.get('currentUser.id')}).then((teams) => {
             this.set('currentUserTeams', teams);
           });
-          resolve();
         }, reject);
       } else {
         resolve();
