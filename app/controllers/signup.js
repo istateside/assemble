@@ -35,7 +35,7 @@ export default Ember.Controller.extend({
     @return Boolean
    */
   _canSignUp() {
-    return this.get('password') === this.get('confirmPassword') &&
+    return this.get('password') === this.get('passwordConfirmation') &&
              isValidEmail(this.get('email'))
   },
 
@@ -48,7 +48,7 @@ export default Ember.Controller.extend({
      */
     signup() {
       let user = this.get('model');
-      
+
       user.save().catch((error) => {
         this.set('errorMessage', error);
       }).then(() => {
