@@ -30,7 +30,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       @return String
      */
     getCurrentUserLocation() {
-      this.get('geolocation').getLocation().then((geoObject) => {
+      this.get('geolocation').trackLocation().then((geoObject) => {
         this.controllerFor('index').set('currentUserLocation',
           geoObject.coords.latitude + ", " + geoObject.coords.longitude);
       });
