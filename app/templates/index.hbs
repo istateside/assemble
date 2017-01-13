@@ -1,24 +1,30 @@
-<p>
-  <button type="button" {{action "getCurrentUserLocation"}}>
-    Get Location
-  </button>
-</p>
-
-{{#if currentUserLocation}}
-  {{currentUserLocation}}
-{{else}}
-  :(
-{{/if}}
-
 {{#if session.isAuthenticated}}
-  Hello {{currentUser.username}}!
-  Your teams are:<br>
-  {{#each teams as |team|}}
-    * {{team.teamName}}<br>
-  {{/each}}
+  Hello {{currentUser.username}}!<br>
+
+  {{#if currentUserLocation}}
+    <p>
+      <button type="button" {{action "getCurrentUserLocation"}}>
+        Get Location
+      </button>
+    </p>
+
+    Your current location is {{currentUserLocation}}.<br>
+  {{/if}}
+
+  {{#if teams}}
+    Your teams are:<br>
+    {{#each teams as |team|}}
+      * {{team.teamName}}<br>
+    {{/each}}
+  {{/if}}
+
   <a {{action 'invalidateSession'}}>Logout</a>
+
 {{else}}
-You should log in.<br>
+
+  You should log in.<br>
+
   {{#link-to 'login'}}Login{{/link-to}}<br>
-{{#link-to 'signup'}}Sign up?{{/link-to}}
+  {{#link-to 'signup'}}Sign up?{{/link-to}}
+  
 {{/if}}
