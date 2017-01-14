@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
    */
   _canSignUp() {
     return this.get('password') === this.get('passwordConfirmation') &&
-             isValidEmail(this.get('email'))
+             isValidEmail(this.get('email'));
   },
 
   actions: {
@@ -56,10 +56,9 @@ export default Ember.Controller.extend({
         .authenticate('authenticator:devise',
           user.get('email'), user.get('password'))
           .catch((reason) => {
-            this.set('errorMessage', reason.error || reason)
+            this.set('errorMessage', reason.error || reason);
           });
-      })
-
+      });
     }
   }
 });

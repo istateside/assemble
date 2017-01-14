@@ -1,10 +1,8 @@
 import Ember from 'ember';
-import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-route-mixin';
 
 /**
   @class route:signup
   @extends Ember.Route
-  @uses UnauthenticatedRouteMixin
  */
 export default Ember.Route.extend({
 
