@@ -44,6 +44,27 @@ export default Ember.Controller.extend({
    */
   currentUserLocation: null,
 
+  /**
+    An attribute used to hold the chosen team's id on the dropdown menu, for use
+    in `teamChoice`
+
+    @attribute teamId
+    @type String
+    @default null
+   */
+  teamId: null,
+
+  /**
+    A computed property using the `teamId` from the dropdown menu to get the full
+    team object from the store.
+
+    @attribute teamChoice
+    @type Object
+   */
+  teamChoice: computed('teamId', function() {
+    return this.get('store').findRecord('team', this.get('teamId'));
+  }),
+
   actions: {
 
     /**
