@@ -26,9 +26,14 @@
         </p>
       {{else}}
         <p>
-          Choose a team.
+          Choose a team above.
         </p>
       {{/if}}
+
+      <p>
+        Enter text for your alert below:<br>
+        {{textarea value=newAlert}}
+      </p>
     {{else}}
       You need to be on a team to send an alert.
     {{/if}}

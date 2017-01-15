@@ -45,6 +45,16 @@ export default Ember.Controller.extend({
   currentUserLocation: null,
 
   /**
+    The text from the text field on the index page that will be used to create
+    a new alert.
+    
+    @attribute newAlert
+    @type String
+    @default ''
+   */
+  newAlert: '',
+
+  /**
     An attribute used to hold the chosen team's id on the dropdown menu, for use
     in `teamChoice`
 
