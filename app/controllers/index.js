@@ -97,7 +97,7 @@ export default Ember.Controller.extend({
       let createAlert = this.get('store').createRecord('alert', {
         alertText: this.get('newAlert'),
         alertLocation: 'TBD', // still have to figure out how to get location reliably
-        teamId: this.get('teamId')
+        team: this.get('teamChoice')
       });
 
       createAlert.save();
