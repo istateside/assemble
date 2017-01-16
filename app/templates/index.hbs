@@ -34,6 +34,8 @@
         Enter text for your alert below:<br>
         {{textarea value=newAlert}}
       </p>
+
+      <button {{action 'sendAlert'}}>Send Alert</button>
     {{else}}
       You need to be on a team to send an alert.
     {{/if}}

@@ -47,7 +47,7 @@ export default Ember.Controller.extend({
   /**
     The text from the text field on the index page that will be used to create
     a new alert.
-    
+
     @attribute newAlert
     @type String
     @default ''
@@ -85,6 +85,22 @@ export default Ember.Controller.extend({
     */
     invalidateSession() {
       this.get('session').invalidate();
+    },
+
+    /**
+      Will eventually work to send alerts to members of chosen team, for now just
+      creates and saves an alert.
+
+      @event sendAlert
+     */
+    sendAlert() {
+      let createAlert = this.get('store').createRecord('alert', {
+        alertText: this.get('newAlert'),
+        alertLocation: 'TBD', // still have to figure out how to get location reliably
+        teamId: this.get('teamId')
+      });
+
+      createAlert.save();
     }
   }
 });
