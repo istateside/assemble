@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('users');
   this.route('users/login');
+  this.route('teams');
   this.route('login');
   this.route('signup');
 });
