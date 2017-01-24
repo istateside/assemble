@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
     modulePrefix: 'assemble',
     environment: environment,
     baseURL: '/',
