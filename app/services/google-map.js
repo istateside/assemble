@@ -1,16 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  googleMaps: window.google.maps,
-
   // this whole thing is from the Google Maps API geolocation example
   initMap() {
-      let map = new googleMaps.Map(document.getElementById('map'), {
+      let map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -34.397, lng: 150.644},
         zoom: 20
       });
 
-      let infoWindow = new googleMaps.InfoWindow({map: map});
+      let infoWindow = new google.maps.InfoWindow({map: map});
 
       // try HTML5 geolocation
       if (navigator.geolocation) {
