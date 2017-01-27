@@ -1,6 +1,6 @@
+{{#if session.isAuthenticated}}
 {{map-display}}
 
-{{#if session.isAuthenticated}}
 {{#link-to 'teams'}}Teams{{/link-to}}
   Hello {{currentUser.username}}!<br>
 
