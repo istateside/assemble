@@ -4,6 +4,7 @@ This app is not really a thing yet, but eventually will be a mobile app backed b
 
 # TODO
 
+- [ ] Get Google Maps API stuff working on `map-display` component
 - [ ] Get location tracking/finding working
 - [ ] Get saving/creating new records working (probs an auth issue)
 - [ ] Add push notification for phones
