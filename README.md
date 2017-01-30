@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lbaillie/assemble.svg?branch=master)](https://travis-ci.org/lbaillie/assemble)
+[![Build Status](https://travis-ci.org/lbaillie/assemble.svg?branch=master)](https://travis-ci.org/lbaillie/assemble) [![Code Climate](https://codeclimate.com/github/lbaillie/assemble/badges/gpa.svg)](https://codeclimate.com/github/lbaillie/assemble) [![Test Coverage](https://codeclimate.com/github/lbaillie/assemble/badges/coverage.svg)](https://codeclimate.com/github/lbaillie/assemble/coverage)
 
 # Assemble
 
