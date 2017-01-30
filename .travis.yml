@@ -5,6 +5,10 @@ node_js:
 
 sudo: false
 
+addons:
+  code_climate:
+    repo_token: f8dc665e9c00b1004c7096875601a3bb39b6b8afd640ca63bca0255068403d35
+
 cache:
   directories:
     - node_modules
@@ -20,3 +24,7 @@ install:
 
 script:
   - ember test
+
+after_success:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < lcov.info
