@@ -1,3 +1,4 @@
+/* global google, handleLocationError, pos */
 import Ember from 'ember';
 
 export default Ember.Service.extend({
@@ -30,7 +31,7 @@ export default Ember.Service.extend({
       }
   },
 
-  handleLocationError(browserHasGeolocation, infoWindow, post) {
+  handleLocationError(browserHasGeolocation, infoWindow) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
       'Error: the geolocation service failed' : "Error: your browser doesn't support geolocation");
