@@ -28,4 +28,6 @@ export default function() {
     let user = schema.users.findBy({ email: "alice@example.com" });
     return user;
   });
+  this.get('/users/:id');
+  this.patch('/users/:id');
 }
