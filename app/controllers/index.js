@@ -32,7 +32,7 @@ export default Ember.Controller.extend({
     @property teams
     @type Object
    */
-  teams: alias('session.currentUserTeams'),
+  teams: alias('session.currentUser.teams'),
 
   /**
     This attribute describes the latitude and longitude of the current user, when
@@ -97,7 +97,7 @@ export default Ember.Controller.extend({
       let createAlert = this.get('store').createRecord('alert', {
         alertText: this.get('newAlert'),
         alertLocation: 'TBD', // still have to figure out how to get location reliably
-        team: this.get('teamChoice')
+        teamId: this.get('teamId')
       });
 
       createAlert.save();
