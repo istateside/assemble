@@ -2,7 +2,7 @@
 {{map-display}}
 
 {{#link-to 'teams'}}Teams{{/link-to}}
-  Hello {{currentUser.username}}!<br>
+  <span data-test-greeting>Hello {{currentUser.username}}!</span><br>
 
   {{#if currentUserLocation}}
     <p>
