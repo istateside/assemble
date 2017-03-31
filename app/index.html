@@ -9,8 +9,8 @@
 
     {{content-for "head"}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/assemble.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/assemble.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
     </script>
@@ -20,11 +20,10 @@
     {{content-for "head-footer"}}
   </head>
   <body>
-
     {{content-for "body"}}
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/assemble.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/assemble.js"></script>
 
     {{content-for "body-footer"}}
   </body>
