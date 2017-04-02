@@ -40,8 +40,7 @@ export default Session.extend({
             let storeUser = this.get('store').peekRecord('user', user.data.id);
             this.set('currentUser', storeUser);
             resolve();
-          }, function(error) {
-            console.log("REJECTED: " + error);
+          }, function() {
             reject();
           });
       } else {
