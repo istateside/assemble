@@ -5,7 +5,7 @@ module.exports = function(environment) {
     GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
     modulePrefix: 'assemble',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'hash',
     contentSecurityPolicy: {
       'connect-src': "*"
@@ -35,6 +35,7 @@ module.exports = function(environment) {
     ENV['ember-simple-auth'] = {
       baseURL: '/'
     };
+    ENV['apiHost'] = "http://localhost:3000"
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

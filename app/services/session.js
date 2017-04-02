@@ -22,6 +22,10 @@ export default Session.extend({
    */
   store: service(),
 
+  ajax: service(),
+
+  currentUser: null,
+
   /**
     A method to get and set the current user's data if authenticated.
 
@@ -31,12 +35,14 @@ export default Session.extend({
   loadCurrentUserData() {
     return new Ember.RSVP.Promise((resolve, reject) => {
       if (this.get('isAuthenticated')) {
-        return this.get('store').findRecord('user', 'me').then((user) => {
-          this.set('currentUser', user);
-          return this.get('store').query('team', { user_id: this.get('currentUser.id')}).then((teams) => {
-            this.set('currentUserTeams', teams);
+        return this.get('ajax').request('/users/me').then(user => {
+            this.get('store').pushPayload(user);
+            let storeUser = this.get('store').peekRecord('user', user.data.id);
+            this.set('currentUser', storeUser);
+            resolve();
+          }, function() {
+            reject();
           });
-        }, reject);
       } else {
         resolve();
       }
