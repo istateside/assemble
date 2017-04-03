@@ -8,13 +8,12 @@ This app is not really a thing yet, but eventually will be a mobile app backed b
 
 To run the app locally, fork and clone this repo and then also fork and clone the [Assemble API](https://github.com/lbaillie/assemble-api) in a separate directory.
 
-In this repo, run `npm install` and `bower install`. Then run `ember s` to run the server. In the API repo, run `rails setup` then `rails s` to run the server (you may also have to run `rails db:migrate` before running `rails s`, I can't remember).
+Be sure you have [Yarn](https://yarnpkg.com/en/) installed on your machine. In this repo, run `yarn`. Then run `ember s` to run the server. In the API repo, run `rails setup` then `rails s` to run the server (you may also have to run `rails db:migrate` before running `rails s`, I can't remember).
 
 When both servers are running, navigate to `localhost:4200`. You can log in with a fake user from the [API seed file](https://github.com/lbaillie/assemble-api/blob/master/db/seeds.rb). You can create a new user if you want, but I haven't added the ability to add new users to teams yet.
 
 ## MVP TODO
 
-- [ ] Get Google Maps API stuff working on `map-display` component
 - [ ] Get location tracking/finding working
 - [ ] Add ability to add a new user to a team
 - [ ] Add profile page
