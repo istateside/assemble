@@ -1,4 +1,3 @@
-/* global server */
 import Ember from 'ember';
 
 export default function destroyApp(application) {
@@ -6,5 +5,4 @@ export default function destroyApp(application) {
   if(window.server) {
     window.server.shutdown();
   }
-  server.shutdown();
 }
