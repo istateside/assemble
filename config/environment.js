@@ -47,6 +47,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    ENV['apiHost'] = "http://localhost:3000"
     // Testem prefers this...
     ENV.baseURL = '/';
     ENV.locationType = 'none';
