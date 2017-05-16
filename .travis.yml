@@ -5,28 +5,28 @@ node_js:
 
 sudo: false
 
+env:
+  global:
+  - COVERAGE=true
+  - CODECLIMATE_REPO_TOKEN=f8dc665e9c00b1004c7096875601a3bb39b6b8afd640ca63bca0255068403d35
+
 addons:
   code_climate:
     repo_token: f8dc665e9c00b1004c7096875601a3bb39b6b8afd640ca63bca0255068403d35
 
 cache:
   directories:
-    - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
+  - "$HOME/.yarn"
 
 before_install:
-  - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
-  - bower --version
-  - phantomjs --version
+  - yarn global add bower codeclimate-test-reporter phantomjs-prebuilt
 
 install:
-  - npm install
-  - bower install
-
-script:
-  - npm test
+  - yarn install
 
 after_success:
   - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < lcov.info
+  - codeclimate-test-reporter < coverage/lcov.info
+
+script:
+  - yarn test
