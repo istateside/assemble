@@ -7,7 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('users');
+  this.route('users', function() {
+    this.route('show', { path: '/:user_id' });
+    this.route('edit', { path: '/:user_id/edit' });
+  });
   this.route('users/login');
   this.route('teams');
   this.route('login');

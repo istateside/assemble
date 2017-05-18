@@ -1,0 +1,12 @@
+<form {{action "update" on="submit"}}>
+  <label for="identification">Email</label>
+  {{input data-test-email value=model.email}}
+  <label for="username">Username</label>
+  {{input value=model.username}}
+  <label for="profileText">Profile Text</label>
+  {{textarea value=model.profileText}}
+  <button class="submit" type="submit">Update</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>
