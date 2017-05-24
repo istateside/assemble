@@ -4,6 +4,16 @@
 
 This app is not really a thing yet, but eventually will be a mobile app backed by [Assemble API](https://github.com/lizbaillie/assemble-api).
 
+## What is this thing?
+
+You can see a loose mockup of the eventual functionality [here](https://marvelapp.com/10228i9/screen/15246106). This should give you some idea of what it is and how it will work. The design is NOT final by any means. I just wanted to give people a quick idea of what the app does and how it will eventually work.
+
+The idea is that if you are in a situation where you feel unsafe, but maybe not enough to call the police, you can quickly summon people from a pre-determined group of people. Those people will receive an alert on their phone letting them know your location on Google Maps, which they can respond to in order to say whether they can come to where you are. You will then be notified about who is on their way and possibly how far away they are.
+
+## Want to contribute?
+
+Check out our CONTRIBUTING.md file - beginners very welcome!
+
 ## Development
 
 To run the app locally, fork and clone this repo and then also fork and clone the [Assemble API](https://github.com/lbaillie/assemble-api) in a separate directory.
