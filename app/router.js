@@ -12,7 +12,9 @@ Router.map(function() {
     this.route('edit', { path: '/:user_id/edit' });
   });
   this.route('users/login');
-  this.route('teams');
+  this.route('teams', function() {
+    this.route('show', { path: '/:team_id' });
+  });
   this.route('login');
   this.route('signup');
 });

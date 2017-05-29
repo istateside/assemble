@@ -1,9 +1,11 @@
 Your teams are:
 <ul>
   {{#each model as |team|}}
-    <li>{{team.teamName}}</li>
+    <li>{{#link-to 'teams.show' team.id}}{{team.teamName}}{{/link-to}}</li>
     {{#each team.users as |user|}}
       {{user.username}}
     {{/each}}
   {{/each}}
 </ul>
+
+{{outlet}}

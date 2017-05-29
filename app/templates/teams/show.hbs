@@ -1,0 +1,9 @@
+<h2>{{model.teamName}}</h2>
+
+<h4>Members of {{model.teamName}}</h4>
+
+<ul>
+  {{#each model.users as |user|}}
+    <li>{{#link-to 'users.show' user}}{{user.username}}{{/link-to}}</li>
+  {{/each}}
+</ul>
