@@ -24,6 +24,9 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.3.x/shorthands/
   */
 
+  this.get('/teams');
+  this.get('/teams/:id');
+
   this.get('/users/me', function(schema) {
     let user = schema.users.findBy({ email: "alice@example.com" });
     return user;
